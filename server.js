@@ -11,6 +11,7 @@ app.set('views', path.resolve(__dirname, 'views'))
 app.use('/static', express.static('static'))
 
 
+// test commit for DockerHub
 app.get('/', (req, res) => {
 	console.log("here")
 	res.render("index.html")
