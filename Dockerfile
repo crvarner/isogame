@@ -1,7 +1,19 @@
-FROM node:14.14.0
-
+FROM node:14-alpine AS base
 WORKDIR /app
 COPY package*.json ./
-CMD ["npm", "install"]
+RUN npm install
 COPY . .
-CMD ["npm", "start"]
+RUN npm run build
+
+
+FROM node:14-alpine AS build
+WORKDIR /app
+COPY --from=base /app .
+CMD npm start
+
+
+# run development server
+FROM node:14-alpine AS dev
+WORKDIR /app
+COPY --from=base /app .
+CMD npm run watch

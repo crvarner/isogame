@@ -1,11 +1,13 @@
 {
   "name": "isogame",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "isometric game client/server",
   "scripts": {
-    "start": "concurrently --kill-others -c blue,green -n webpack,server \"npm:webpack\" \"npm:server\"",
-    "webpack": "webpack --watch --config webpack.cjs",
-    "server": "nodemon index.js"
+    "build": "npx webpack --config webpack.cjs",
+    "start": "node index.js",
+    "watch": "npx concurrently --kill-others -n webpack,server \"npm:webpack\" \"npm:server\"",
+    "webpack": "npx webpack --watch --config webpack.cjs",
+    "server": "npx nodemon index.js"
   },
   "repository": {
     "type": "git",

@@ -12,6 +12,7 @@ app.use('/static', express.static('static'))
 
 
 app.get('/', (req, res) => {
+	console.log("here")
 	res.render("index.html")
 })
 
