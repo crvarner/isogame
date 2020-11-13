@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  game_server:
+    build:
+      context: .
+      target: dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - ./development.yml:/etc/isogame/isogame.yml

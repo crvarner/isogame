@@ -2,8 +2,10 @@ import express from 'express'
 import path from 'path'
 import ejs from 'ejs'
 
+import config from './server/config'
 import utils from './common/utils'
 
+config.load(path.resolve('/etc', 'isogame', 'isogame.yml'))
 
 const app = express()
 app.engine('.html', ejs.__express)
@@ -12,7 +14,7 @@ app.use('/static', express.static('static'))
 
 
 app.get('/', (req, res) => {
-	console.log("here")
+	console.log(config.get('test'))
 	res.render("index.html")
 })
 
