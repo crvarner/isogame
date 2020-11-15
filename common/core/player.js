@@ -1,5 +1,5 @@
-import { collider } from 'common/core/collision'
-import State from 'common/core/state'
+import { collider } from './collision'
+import State from './state'
 
 
 export default function Player (x, y) {
@@ -152,10 +152,8 @@ export default function Player (x, y) {
 			actor.vy = Math.min(MAX_VY, actor.vy + FALL_GRAVITY * dt)
 			actor.my += actor.vy * dt
 
-			console.log(actor.y)
 			collider.resolve(actor)
 			if (actor.vy >= 0) {
-				console.log(actor)
 				let jumpAllowed = !isDoubleJump
 				return new FallingState(jumpAllowed)
 			}

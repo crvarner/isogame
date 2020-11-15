@@ -1,4 +1,4 @@
-import { gameContext } from 'common/core/contexts'
+import { gameContext } from './contexts'
 const {actions, states} = gameContext
 
 export default function (player) {

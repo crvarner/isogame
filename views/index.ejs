@@ -1,0 +1,11 @@
+<html>
+<body>
+<canvas style="border: 1px solid black" height="450" width="800"></canvas>
+<script>
+
+window.routes = <%- dump_routes() %>
+
+</script>
+<script src="<%= url_for('/static/js/client.bundle.js') %>"></script>
+</body>
+</html>
