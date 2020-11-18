@@ -1,4 +1,3 @@
-import { collider } from './collision'
 import State from './state'
 
 
@@ -60,8 +59,6 @@ export default function Player (x, y) {
 
 			actor.vy = Math.min(MAX_VY, actor.vy + FALL_GRAVITY * dt)
 			actor.my += actor.vy * dt
-
-			collider.resolve(actor)
 		}
 
 		this.move = function (actor, direction) {
@@ -105,8 +102,6 @@ export default function Player (x, y) {
 
 			actor.vy = Math.min(MAX_VY, actor.vy + FALL_GRAVITY * dt)
 			actor.my += actor.vy * dt
-
-			collider.resolve(actor)
 		}
 
 		this.move = function (actor, direction) {
@@ -152,7 +147,6 @@ export default function Player (x, y) {
 			actor.vy = Math.min(MAX_VY, actor.vy + FALL_GRAVITY * dt)
 			actor.my += actor.vy * dt
 
-			collider.resolve(actor)
 			if (actor.vy >= 0) {
 				let jumpAllowed = !isDoubleJump
 				return new FallingState(jumpAllowed)
@@ -198,8 +192,6 @@ export default function Player (x, y) {
 
 			actor.vy = Math.min(MAX_VY, actor.vy + FALL_GRAVITY * dt)
 			actor.my += actor.vy * dt
-
-			collider.resolve(actor)
 		}
 
 		this.move = function (actor, direction) {

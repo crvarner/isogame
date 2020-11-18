@@ -1,6 +1,6 @@
 {
   "name": "isogame",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "isometric game client/server",
   "scripts": {
     "build": "npx webpack --config webpack.cjs",
@@ -36,7 +36,7 @@
     "ejs": "^3.1.5",
     "esm": "^3.2.25",
     "express": "^4.17.1",
-    "node-gameloop": "^0.1.4",
+    "express-ejs-layouts": "^2.5.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "ws": "^7.4.0",

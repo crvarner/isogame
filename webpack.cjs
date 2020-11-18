@@ -4,6 +4,7 @@ module.exports = {
 	mode: 'development',
 	devtool: 'inline-source-map',
 	entry: {
+		lobby: './client/lobby.js',
 		client: './client/client.js'
 	},
 	output: {
