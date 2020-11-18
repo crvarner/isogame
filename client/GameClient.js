@@ -9,7 +9,7 @@ export default function GameClient (engine, canvas) {
     /*
     websocket stuff should be moved into its own Emitter class
     */
-    const scheme = window.location.protocol == 'https' ? 'wss' : 'ws'
+    const scheme = window.location.protocol == 'https:' ? 'wss' : 'ws'
     const host = window.location.hostname + (window.location.port ? `:${window.location.port}` : '')
     const path = window.location.pathname
     const url = `${scheme}://${host}${path}`
